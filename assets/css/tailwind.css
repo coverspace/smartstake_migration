@@ -31,4 +31,14 @@ body {
   .text-smart_orange_01 {
     color: #d43024;
   }
+
+  .line-clamp-1 {
+    -webkit-line-clamp: 1;
+  }
+  .line-clamp-2 {
+    -webkit-line-clamp: 2;
+  }
+  .line-clamp-3 {
+    -webkit-line-clamp: 3;
+  }
 }

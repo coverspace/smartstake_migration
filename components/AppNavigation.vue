@@ -20,11 +20,11 @@
               {{ item.children[0].title }}
             </NuxtLink>
           </li>
-          <li
+          <button
             class="text-xl text-white font-light uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024] cursor-pointer"
           >
-            Join US
-          </li>
+            Join us
+          </button>
         </ul>
       </div>
     </div>
