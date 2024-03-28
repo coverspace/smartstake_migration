@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: icofont;
+  src: url("./../fonts/icofont.ttf");
+  font-weight: Regular;
+}
+@font-face {
+  font-family: Reunir;
+  src: url("./../fonts/Reunir.ttf");
+  font-weight: Regular;
+}
+
+html,
+body {
+  font-family: Open Sans;
+}
+
+@layer utilities {
+  .bg-smart_blue_01 {
+    background-color: #1c1646;
+  }
+  .text-smart_blue_01 {
+    color: #1c1646;
+  }
+  .bg-smart_oragne_01 {
+    background-color: #d43024;
+  }
+  .text-smart_oragne_01 {
+    color: #d43024;
+  }
+}

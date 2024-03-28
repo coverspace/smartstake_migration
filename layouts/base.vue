@@ -6,7 +6,7 @@ const { data: navigation } = await useAsyncData("navigation", () => {
 </script>
 
 <template>
-  <div class="base-container">
+  <div class="">
     <header class="">
       <slot name="navigation">
         <AppNavigation :navigation-tree="navigation" />
