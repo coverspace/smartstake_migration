@@ -15,7 +15,7 @@ const { data: navigation } = await useAsyncData("navigation", () => {
     <section class="bg-gray-200">
       <slot />
     </section>
-    <footer class="">
+    <footer class="lg:container mx-auto">
       <AppFooter />
     </footer>
   </div>

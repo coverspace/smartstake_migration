@@ -14,7 +14,7 @@
           <li
             v-for="(item, index) in navigationTree"
             :key="index"
-            class="text-lg text-white font-medium uppercase hover:text-smart_oragne_01"
+            class="text-lg text-white font-medium uppercase hover:text-smart_orange_01"
           >
             <NuxtLink :to="item._path === '/main' ? '/' : item._path">
               {{ item.children[0].title }}

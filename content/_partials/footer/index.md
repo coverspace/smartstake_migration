@@ -1,5 +1,19 @@
 ---
-title: ThaFooter
+brand: "Copyright"
+title: "SmartStake.AI"
+link: "#"
+footer_buttons:
+  - button:
+    title: "Privacy & Policy"
+    link: "#"
+
+  - button:
+    title: "Term of Service"
+    link: "#"
+
+  - button:
+    title: "Plans"
+    link: "#"
 ---
 
-Copyright © 2022 - All right reserved by TheTeam
+All rights reserved by
