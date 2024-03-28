@@ -27,6 +27,21 @@
             >
               <span>{{ doc.main_button }}</span>
             </button>
+            <div class="flex flex-row justify-center items-center my-12 w-full">
+              <div
+                v-for="(item, index) in doc.sets"
+                :key="index"
+                class="flex flex-col justify-start items-center px-8 border-r last:border-none"
+              >
+                <h1 class="text-white text-[2rem] font-bold">
+                  {{ item.number }}
+                </h1>
+                <small
+                  class="text-smart_orange_01 uppercase text-lg font-semibold"
+                  >{{ item.label }}</small
+                >
+              </div>
+            </div>
           </ContentDoc>
         </div>
       </div>
