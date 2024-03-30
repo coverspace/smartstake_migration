@@ -32,6 +32,7 @@
           :itemsToShow="5"
           :wrapAround="true"
           :transition="500"
+          :autoplay="3000"
           class="cursor-grab"
           id="carousel"
         >
@@ -46,7 +47,7 @@
             </div>
           </Slide>
           <template #addons>
-            <navigation />
+            <!-- <navigation /> -->
             <pagination />
           </template>
         </Carousel>

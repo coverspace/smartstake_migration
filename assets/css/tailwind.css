@@ -31,6 +31,18 @@ body {
   .text-smart_orange_01 {
     color: #d43024;
   }
+  .bg-smart_purple_01 {
+    background-color: #761acc;
+  }
+  .text-smart_purple_01 {
+    color: #761acc;
+  }
+  .bg-smart_red_01 {
+    background-color: #ca002c;
+  }
+  .text-smart_red_01 {
+    color: #ca002c;
+  }
 
   .line-clamp-1 {
     -webkit-line-clamp: 1;
