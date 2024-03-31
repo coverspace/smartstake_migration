@@ -3,7 +3,7 @@
     <div class="col-span-12">
       <div class="flex flex-col justify-center items-center h-full">
         <div
-          class="flex flex-col justify-center items-center gap-10 my-16 h-full"
+          class="flex flex-col justify-center items-center gap-10 my-16 h-full w-full"
         >
           <ContentDoc path="main/block_05" v-slot="{ doc }">
             <h1 class="text-2xl text-center font-medium text-gray-600">
@@ -36,24 +36,36 @@
               </li>
             </ul>
 
-            <div
-              class="flex flex-col justify-center items-start gap-4 border border-red-500"
-            >
+            <div class="grid grid-cols-12 w-3/5">
               <div
                 v-for="(item, index) in doc?.questions[activeTab]"
                 :key="question"
+                class="col-span-12"
               >
-                <div
-                  v-for="(set, index) in item"
-                  :key="set"
-                  class="text-lg text-black font-medium shadow-xl uppercase rounded-3xl px-8 py-2"
-                >
+                <div v-for="(set, index) in item" :key="set">
                   <div v-for="element in set" :key="element">
                     <template v-if="index > 0">
-                      <h1 class="border border-red-500">
-                        {{ element.question }}
-                      </h1>
-                      <p class="border border-blue-500">{{ element.answer }}</p>
+                      <div class="flex flex-col items-center gap-1 mb-4">
+                        <div
+                          @click="pickItem(index)"
+                          class="flex flex-row justify-between items-center bg-gray-50 shadow-lg cursor-pointer w-full"
+                        >
+                          <h1
+                            class="px-6 py-4 text-lg font-bold text-gray-600 rounded-t-sm w-full"
+                          >
+                            {{ element.question }}
+                          </h1>
+                          <IconArrow
+                            class="w-10 h-auto text-smart_orange_01 p-2 mx-2 border rounded-full bg-white hover:bg-gray-50"
+                          />
+                        </div>
+                        <p
+                          v-show="index === activeItem"
+                          class="bg-white px-6 py-4 text-gray-500 font-medium shadow-lg rounded-b-sm"
+                        >
+                          {{ element.answer }}
+                        </p>
+                      </div>
                     </template>
                   </div>
                 </div>
@@ -67,10 +79,16 @@
 </template>
 
 <script lang="ts" setup>
+import IconArrow from "./../components/icons/IconArrow.vue";
 const activeTab = ref<number>(0);
+const activeItem = ref<number>(0);
 
 const elementTabs = (index: number) => {
   activeTab.value = index;
+  activeItem.value = 0;
+};
+const pickItem = (index: number) => {
+  activeItem.value = index;
 };
 </script>
 <style lang="css" scoped>
