@@ -12,7 +12,7 @@
         </div>
         <ul class="flex flex-row justify-end items-center gap-14 shadow p-4">
           <li
-            v-for="(item, index) in navigationTree"
+            v-for="(item, index) in navigationTree.slice(0, 4)"
             :key="index"
             class="text-lg text-white font-medium uppercase hover:text-smart_orange_01"
           >
@@ -42,13 +42,7 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  console.log("navigationTree", props.navigationTree[0].children[0]._path);
-  console.log("title", props.navigationTree[0].children[0].title);
+  console.log("navigationTree", props.navigationTree);
+  // console.log("title", props.navigationTree[0].children[0].title);
 });
 </script>
-
-<style lang="scss" scoped>
-div {
-  content: "";
-}
-</style>

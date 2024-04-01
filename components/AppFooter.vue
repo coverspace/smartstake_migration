@@ -10,11 +10,7 @@
       &copy;
       {{ currentYear }}
       {{ item.body.children[0].children[0].value }}
-      <a
-        :href="item.link"
-        class="text-smart_orange_01 font-semibold"
-        target="_blank"
-      >
+      <a :href="item.link" class="text-smart_orange_01 font-semibold">
         {{ item.title }}</a
       >
     </h1>
@@ -27,7 +23,6 @@
         :key="index"
         :href="button.link"
         class="text-gray-500 font-semibold uppercase hover:text-smart_orange_01"
-        target="_blank"
       >
         {{ button.title }}</a
       >

@@ -23,9 +23,3 @@ const { data: navigation } = await useAsyncData("navigation", () => {
   return fetchContentNavigation();
 });
 </script>
-
-<style lang="scss" scoped>
-div {
-  content: "";
-}
-</style>

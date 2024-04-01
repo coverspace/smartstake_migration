@@ -44,15 +44,3 @@
     </div>
   </div>
 </template>
-
-<script setup></script>
-
-<style lang="scss" scoped>
-main {
-  border: 1px solid green;
-
-  h1:nth-child(3) {
-    background: green;
-  }
-}
-</style>

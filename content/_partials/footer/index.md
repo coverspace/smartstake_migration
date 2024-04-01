@@ -1,19 +1,19 @@
 ---
 brand: "Copyright"
 title: "SmartStake.AI"
-link: "#"
+link: "/"
 footer_buttons:
   - button:
     title: "Privacy & Policy"
-    link: "/terms#privacy-policy"
+    link: "/privacy"
 
   - button:
     title: "Term of Service"
-    link: "/terms#term-of-service"
+    link: "/terms"
 
   - button:
     title: "Legal disclosure"
-    link: "terms#legal-disclosure"
+    link: "/legal"
 
   - button:
     title: "Plans"
