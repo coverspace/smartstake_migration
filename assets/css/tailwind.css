@@ -43,6 +43,12 @@ body {
   .text-smart_red_01 {
     color: #ca002c;
   }
+  .bg-smart_indigo_01 {
+    background-color: #6f14c8;
+  }
+  .text-smart_indigo_01 {
+    color: #6f14c8;
+  }
 
   .line-clamp-1 {
     -webkit-line-clamp: 1;
