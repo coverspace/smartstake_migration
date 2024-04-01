@@ -20,11 +20,13 @@
               {{ item.children[0].title }}
             </NuxtLink>
           </li>
-          <button
-            class="text-xl text-white font-light uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024] cursor-pointer"
-          >
-            Join us
-          </button>
+          <a href="https://bigiba.com/registration/1S41GS" target="_blank">
+            <button
+              class="text-xl text-white font-light uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024] cursor-pointer"
+            >
+              Join us
+            </button>
+          </a>
         </ul>
       </div>
     </div>
@@ -40,7 +42,8 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  // console.log("navigationTree", props.navigationTree);
+  console.log("navigationTree", props.navigationTree[0].children[0]._path);
+  console.log("title", props.navigationTree[0].children[0].title);
 });
 </script>
 

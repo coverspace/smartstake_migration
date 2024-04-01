@@ -5,15 +5,19 @@ link: "#"
 footer_buttons:
   - button:
     title: "Privacy & Policy"
-    link: "#"
+    link: "/terms#privacy-policy"
 
   - button:
     title: "Term of Service"
-    link: "#"
+    link: "/terms#term-of-service"
+
+  - button:
+    title: "Legal disclosure"
+    link: "terms#legal-disclosure"
 
   - button:
     title: "Plans"
-    link: "#"
+    link: "/plans"
 ---
 
 All rights reserved by

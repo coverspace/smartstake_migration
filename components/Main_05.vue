@@ -24,7 +24,7 @@
               >
                 <button
                   @click="elementTabs(index)"
-                  class="text-lg text-white font-medium shadow-xl uppercase rounded-3xl px-8 py-2"
+                  class="text-lg font-medium shadow-xl uppercase rounded-3xl px-8 py-2"
                   :class="
                     index === activeTab
                       ? 'text-gray-50 bg-gradient-to-r from-[#cc002a] to-[#960057]'
@@ -57,6 +57,7 @@
                           </h1>
                           <IconArrow
                             class="w-10 h-auto text-smart_orange_01 p-2 mx-2 border rounded-full bg-white hover:bg-gray-50"
+                            :class="{ 'rotate-180': index === activeItem }"
                           />
                         </div>
                         <p

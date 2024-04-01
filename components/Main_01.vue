@@ -22,11 +22,7 @@
             <h1 class="text-xl w-1/2 text-center font-medium text-gray-50">
               {{ doc.description }}
             </h1>
-            <button
-              class="text-xl text-white font-light uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024]"
-            >
-              <span>{{ doc.main_button }}</span>
-            </button>
+
             <div class="flex flex-row justify-center items-center my-12 w-full">
               <div
                 v-for="(item, index) in doc.sets"

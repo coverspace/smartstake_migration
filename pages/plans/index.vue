@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="base">
-    <Plan_01 />
-    <Plan_02 />
+    <Plans_01 />
+    <Plans_02 />
   </NuxtLayout>
 </template>

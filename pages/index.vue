@@ -5,6 +5,6 @@
     <Main_03 />
     <Main_04 />
     <Main_05 />
-    <Main_06 />
+    <About_01 />
   </NuxtLayout>
 </template>

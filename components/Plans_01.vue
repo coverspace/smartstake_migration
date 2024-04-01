@@ -4,7 +4,7 @@
       <div
         class="flex flex-col justify-center items-center border-2 border-red-500 my-2"
       >
-        <ContentDoc path="/plan/block_02" v-slot="{ doc }">
+        <ContentDoc path="/plans/block_01" v-slot="{ doc }">
           <small>{{ doc.description }}</small>
           <ContentRenderer :value="doc" />
         </ContentDoc>
