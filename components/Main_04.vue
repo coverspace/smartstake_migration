@@ -1,33 +1,73 @@
 <template>
-  <div class="grid grid-col-12">
+  <div class="grid grid-cols-12">
     <div class="col-span-12">
       <div class="flex flex-col justify-center items-center h-full">
         <div
-          class="flex flex-col justify-center items-center gap-10 my-16 h-full"
+          class="flex flex-col justify-center items-center gap-4 xl:gap-10 my-8 xl:my-16 h-full"
         >
           <ContentDoc path="main/block_04" v-slot="{ doc }">
             <h1
-              class="text-2xl text-center font-medium text-gray-600 uppercase"
+              class="text-lg xl:text-2xl text-center font-medium text-gray-600 uppercase"
             >
               {{ doc.description }}
             </h1>
 
             <h1
-              class="text-[4rem] text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
+              class="text-2xl xl:text-7xl text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
             >
               {{ doc.label }}
             </h1>
 
             <ContentRenderer
               :value="doc"
-              class="text-xl w-2/3 text-center font-medium text-gray-600"
+              class="text-xl w-4/5 xl:w-2/3 text-center font-medium text-gray-600"
             />
           </ContentDoc>
         </div>
       </div>
     </div>
 
-    <div class="col-span-12 mb-32">
+    <div class="col-span-12 mb-8 xl:hidden">
+      <ContentDoc path="main/block_04" v-slot="{ doc }">
+        <ul class="flex flex-col justify-start items-start gap-4 px-8">
+          <li v-for="(slide, index) in doc.sets" :key="index" class="">
+            <div
+              class="flex flex-col justify-start items-center w-full bg-gray-50 shadow-md rounded-md gap-4 p-4"
+            >
+              <p class="text-gray-500 text-justify text-lg font-semibold py-2">
+                {{ slide.message }}
+              </p>
+              <hr class="border-t border-[#d43024] w-full" />
+              <div
+                class="flex flex-row justify-evenly items-center gap-4 w-full"
+              >
+                <NuxtImg
+                  :src="slide.image"
+                  class="w-20 h-auto border-2 border-[#d43024] shadow-2xl rounded-lg"
+                />
+                <div class="flex flex-col justify-evenly items-start gap-2">
+                  <h2
+                    class="text-gray-600 text-xl uppercase font-semibold text-smart_red_01"
+                  >
+                    {{ slide.name }}
+                  </h2>
+                  <div
+                    class="flex flex-row justify-start items-center w-full text-gray-500"
+                  >
+                    <div class="flex flex-col justify-center items-center">
+                      <p>{{ slide.location }}</p>
+                      <small>{{ slide.date }}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </ContentDoc>
+    </div>
+
+    <div class="col-span-12 my-16 hidden xl:block">
       <!-- Gallery -->
       <ContentDoc path="main/block_04" v-slot="{ doc }">
         <Carousel

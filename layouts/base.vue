@@ -5,18 +5,20 @@
         <AppNavigation :navigation-tree="navigation" />
       </slot>
     </header>
-    <section class="bg-gray-200">
+    <section class="">
       <slot />
     </section>
     <footer class="lg:container mx-auto">
       <AppFooter />
     </footer>
     <ScrollToTopButton />
+    <CookieBanner />
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import ScrollToTopButton from "@/components/partials/ScrollToTopButton.vue";
+import CookieBanner from "@/components/partials/CookieBanner.vue";
 
 const route = useRoute();
 const { data: navigation } = await useAsyncData("navigation", () => {

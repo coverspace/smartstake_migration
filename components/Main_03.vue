@@ -1,33 +1,73 @@
 <template>
-  <div class="grid grid-col-12">
+  <div class="grid grid-cols-12">
     <div class="col-span-12">
       <div class="flex flex-col justify-center items-center h-full">
         <div
-          class="flex flex-col justify-center items-center gap-10 my-16 h-full"
+          class="flex flex-col justify-center items-center gap-4 xl:gap-10 my-8 xl:my-16 h-full"
         >
           <ContentDoc path="main/block_03" v-slot="{ doc }">
             <h1
-              class="text-2xl text-center font-medium text-gray-600 uppercase"
+              class="text-lg xl:text-2xl text-center font-medium text-gray-600 uppercase"
             >
               {{ doc.description }}
             </h1>
 
             <h1
-              class="text-[4rem] text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
+              class="text-2xl xl:text-7xl text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
             >
               {{ doc.label }}
             </h1>
 
             <ContentRenderer
               :value="doc"
-              class="text-xl w-2/3 text-center font-medium text-gray-600"
+              class="text-xl w-4/5 xl:w-2/3 text-center font-medium text-gray-600"
             />
           </ContentDoc>
         </div>
       </div>
     </div>
 
-    <div class="col-span-12 my-16">
+    <div class="col-span-12 mb-8 xl:hidden">
+      <ContentDoc path="main/block_03" v-slot="{ doc }">
+        <ul class="flex flex-col justify-start items-start gap-4 px-8">
+          <li
+            v-for="(slide, index) in doc.sets"
+            :key="index"
+            class="bg-gray-50 p-4 rounded-md shadow-md text-center w-full"
+          >
+            <div class="flex flex-row justify-center items-center gap-2">
+              <h1 class="uppercase text-gray-500 text-2xl font-bold">
+                {{ slide.percentage }}
+              </h1>
+              <h2 class="text-gray-500 text-xl">{{ slide.title }}</h2>
+            </div>
+            <div
+              class="flex flex-row justify-around items-center gap-4 my-4 w-full"
+            >
+              <p class="flex text-gray-500 font-semibold text-lg">
+                {{ slide.min_text }}
+                <b class="font-bold text-gray-600"
+                  >{{ slide.min_currency }}{{ slide.min_value }}</b
+                >
+              </p>
+              <p class="flex text-gray-500 font-semibold text-lg">
+                {{ slide.max_text }}
+                <b class="font-bold text-gray-600"
+                  >{{ slide.max_currency }} {{ slide.max_value }}</b
+                >
+              </p>
+            </div>
+            <button
+              class="text-base text-white font-normal uppercase rounded-3xl px-8 py-2 bg-smart_purple_01 hover:bg-smart_orange_01 border-2 border-[#d43024] shadow-2xl"
+            >
+              {{ slide.button }}
+            </button>
+          </li>
+        </ul>
+      </ContentDoc>
+    </div>
+
+    <div class="col-span-12 my-16 hidden xl:block">
       <!-- Gallery -->
       <ContentDoc path="main/block_03" v-slot="{ doc }">
         <Carousel

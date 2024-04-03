@@ -1,30 +1,34 @@
 <template>
-  <div class="grid grid-col-12">
+  <div class="grid grid-cols-12">
     <div class="col-span-12">
       <div class="flex flex-col justify-center items-center h-full">
         <div
-          class="flex flex-col justify-center items-center gap-10 my-16 h-full w-full"
+          class="flex flex-col justify-center items-center gap-4 xl:gap-10 my-8 xl:my-16 h-full"
         >
           <ContentDoc path="main/block_05" v-slot="{ doc }">
-            <h1 class="text-2xl text-center font-medium text-gray-600">
+            <h1
+              class="text-lg xl:text-2xl text-center font-medium text-gray-600"
+            >
               {{ doc.description }}
             </h1>
 
             <h1
-              class="text-[4rem] text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
+              class="text-2xl xl:text-7xl text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
             >
               {{ doc.label }}
             </h1>
 
-            <ul class="flex flex-row justify-center items-start gap-4">
+            <ul
+              class="flex flex-col xl:flex-row justify-center items-start mb-4 xl:mb-0 gap-2 xl:gap-4 w-full"
+            >
               <li
                 v-for="(item, index) in doc.questions"
                 :key="question"
-                class=""
+                class="w-full px-4 xl:px-0 text-center"
               >
                 <button
                   @click="elementTabs(index)"
-                  class="text-lg font-medium shadow-xl uppercase rounded-3xl px-8 py-2"
+                  class="text-xs xl:text-lg font-medium shadow-xl uppercase rounded xl:rounded-3xl px-4 xl:px-8 py-1 xl:py-2 w-full"
                   :class="
                     index === activeTab
                       ? 'text-gray-50 bg-gradient-to-r from-[#cc002a] to-[#960057]'
@@ -36,22 +40,22 @@
               </li>
             </ul>
 
-            <div class="grid grid-cols-12 w-3/5">
+            <div class="grid grid-cols-12 w-full xl:w-[75vw]">
               <div
                 v-for="(item, index) in doc?.questions[activeTab]"
                 :key="question"
-                class="col-span-12"
+                class="col-span-12 mx-4 xl:mx-0"
               >
                 <div v-for="(set, index) in item" :key="set">
                   <div v-for="element in set" :key="element">
                     <template v-if="index > 0">
-                      <div class="flex flex-col items-center gap-1 mb-4">
+                      <div class="flex flex-col items-center gap-1 xl:mb-4">
                         <div
                           @click="pickItem(index)"
                           class="flex flex-row justify-between items-center bg-gray-50 shadow-lg cursor-pointer w-full"
                         >
                           <h1
-                            class="px-6 py-4 text-lg font-bold text-gray-600 rounded-t-sm w-full"
+                            class="px-3 xl:px-6 py-2 xl:py-4 text-sm xl:text-lg font-bold text-gray-600 rounded-t-sm w-full"
                           >
                             {{ element.question }}
                           </h1>
@@ -62,7 +66,7 @@
                         </div>
                         <p
                           v-show="index === activeItem"
-                          class="bg-white px-6 py-4 text-gray-500 font-medium shadow-lg rounded-b-sm"
+                          class="bg-white px-3 xl:px-6 py-2 xl:py-4 text-justify text-sm xl:text-lg text-gray-500 font-medium shadow-lg rounded-b-sm w-full"
                         >
                           {{ element.answer }}
                         </p>

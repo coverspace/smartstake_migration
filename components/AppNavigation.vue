@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-col-12">
+  <div class="grid grid-cols-12">
     <div class="col-span-12 bg-smart_blue_01">
       <div
         class="hidden lg:flex flex-row justify-between items-center w-3/5 mx-auto"

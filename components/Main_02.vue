@@ -1,31 +1,50 @@
 <template>
-  <div class="grid grid-col-12">
+  <div class="grid grid-cols-12">
     <div class="col-span-12">
       <div class="flex flex-col justify-center items-center h-full">
         <div
-          class="flex flex-col justify-center items-center gap-10 my-16 h-full"
+          class="flex flex-col justify-center items-center gap-4 xl:gap-10 my-8 xl:my-16 h-full"
         >
           <ContentDoc path="main/block_02" v-slot="{ doc }">
-            <h1 class="text-2xl text-center font-medium text-gray-600">
+            <h1
+              class="text-lg xl:text-2xl text-center font-medium text-gray-600"
+            >
               {{ doc.description }}
             </h1>
 
             <h1
-              class="text-[4rem] text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
+              class="text-2xl xl:text-7xl text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
             >
               {{ doc.label }}
             </h1>
 
             <ContentRenderer
               :value="doc"
-              class="text-xl w-2/3 text-center font-medium text-gray-600"
+              class="text-xl w-4/5 xl:w-2/3 text-center font-medium text-gray-600"
             />
           </ContentDoc>
         </div>
       </div>
     </div>
 
-    <div class="col-span-12 my-16">
+    <div class="col-span-12 mb-8 xl:hidden">
+      <ContentDoc path="main/block_02" v-slot="{ doc }">
+        <ul class="flex flex-col justify-start items-start gap-4 px-8">
+          <li
+            v-for="(slide, index) in doc.sets"
+            :key="index"
+            class="bg-gray-50 px-4 py-2 rounded-md shadow-md"
+          >
+            <h1 class="uppercase text-gray-500 text-lg font-bold">
+              {{ slide.title }}
+            </h1>
+            <h2 class="text-gray-500 text-base">{{ slide.label }}</h2>
+          </li>
+        </ul>
+      </ContentDoc>
+    </div>
+
+    <div class="col-span-12 my-16 hidden xl:block">
       <!-- Gallery -->
       <ContentDoc path="main/block_02" v-slot="{ doc }">
         <Carousel
