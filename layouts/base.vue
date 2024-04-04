@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <header class="sticky top-0 z-10">
+    <header class="xl:sticky xl:top-0 xl:z-10">
       <slot name="navigation">
         <AppNavigation :navigation-tree="navigation" />
       </slot>
