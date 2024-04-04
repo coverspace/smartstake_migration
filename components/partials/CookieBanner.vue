@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!cookieAccepted"
-    class="fixed top-0 bottom-0 right-0 left-0 w-full h-full bg-[#00000099] kolbaska"
+    class="fixed top-0 bottom-0 right-0 left-0 w-full h-full bg-[#00000099]"
   >
     <!-- lg:h-1/3 -->
     <form
