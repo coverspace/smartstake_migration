@@ -22,104 +22,16 @@
               :value="doc"
               class="text-xl w-4/5 xl:w-2/3 text-center font-medium text-gray-600"
             />
+
+            <NuxtLink
+              :to="doc.link"
+              class="text-xl text-white font-semibold uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024] cursor-pointer"
+            >
+              {{ doc.button }}
+            </NuxtLink>
           </ContentDoc>
         </div>
       </div>
-    </div>
-
-    <div class="col-span-12 mb-8 xl:hidden">
-      <ContentDoc path="main/block_03" v-slot="{ doc }">
-        <ul class="flex flex-col justify-start items-start gap-4 px-8">
-          <li
-            v-for="(slide, index) in doc.sets"
-            :key="index"
-            class="bg-gray-50 p-4 rounded-md shadow-md text-center w-full"
-          >
-            <div class="flex flex-row justify-center items-center gap-2">
-              <h1 class="uppercase text-gray-500 text-2xl font-bold">
-                {{ slide.percentage }}
-              </h1>
-              <h2 class="text-gray-500 text-xl">{{ slide.title }}</h2>
-            </div>
-            <div
-              class="flex flex-row justify-around items-center gap-4 my-4 w-full"
-            >
-              <p class="flex text-gray-500 font-semibold text-lg">
-                {{ slide.min_text }}
-                <b class="font-bold text-gray-600"
-                  >{{ slide.min_currency }}{{ slide.min_value }}</b
-                >
-              </p>
-              <p class="flex text-gray-500 font-semibold text-lg">
-                {{ slide.max_text }}
-                <b class="font-bold text-gray-600"
-                  >{{ slide.max_currency }} {{ slide.max_value }}</b
-                >
-              </p>
-            </div>
-            <button
-              class="text-base text-white font-normal uppercase rounded-3xl px-8 py-2 bg-smart_purple_01 hover:bg-smart_orange_01 border-2 border-[#d43024] shadow-2xl"
-            >
-              {{ slide.button }}
-            </button>
-          </li>
-        </ul>
-      </ContentDoc>
-    </div>
-
-    <div class="col-span-12 my-16 hidden xl:block">
-      <!-- Gallery -->
-      <ContentDoc path="main/block_03" v-slot="{ doc }">
-        <Carousel
-          :itemsToShow="3.8"
-          :wrapAround="true"
-          :transition="500"
-          :autoPlay="3000"
-          class="cursor-grab"
-          id="carousel"
-        >
-          <Slide v-for="(slide, index) in doc.sets" :key="index">
-            <div
-              class="carousel__item flex flex-col justify-center items-center relative gap-4 border bg-gray-50 px-8 pt-[12rem] pb-12 border-gray-100 shadow-lg !-mt-4"
-            >
-              <span
-                class="bg-gray-300 w-[17rem] h-[17rem] rounded-full absolute -top-32"
-              ></span>
-              <h1 class="uppercase text-smart_red_01 text-[3rem] font-bold">
-                {{ slide.percentage }}
-              </h1>
-              <h2 class="text-gray-600 text-xl uppercase font-semibold">
-                {{ slide.title }}
-              </h2>
-              <div
-                class="flex flex-row justify-between items-center gap-4 w-full"
-              >
-                <p class="flex text-gray-500 font-semibold text-lg">
-                  {{ slide.min_text }}
-                  <b class="font-bold text-gray-600"
-                    >{{ slide.min_currency }}{{ slide.min_value }}</b
-                  >
-                </p>
-                <p class="flex text-gray-500 font-semibold text-lg">
-                  {{ slide.max_text }}
-                  <b class="font-bold text-gray-600"
-                    >{{ slide.max_currency }} {{ slide.max_value }}</b
-                  >
-                </p>
-              </div>
-              <button
-                class="text-xl text-white font-light uppercase rounded-3xl px-8 py-2 bg-smart_purple_01 hover:bg-smart_orange_01 border-2 border-[#d43024] shadow-2xl"
-              >
-                {{ slide.button }}
-              </button>
-            </div>
-          </Slide>
-          <template #addons>
-            <!-- <navigation /> -->
-            <pagination />
-          </template>
-        </Carousel>
-      </ContentDoc>
     </div>
   </div>
 </template>

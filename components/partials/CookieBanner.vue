@@ -5,7 +5,7 @@
   >
     <!-- lg:h-1/3 -->
     <form
-      v-for="item in content"
+      v-for="(item, index) in content"
       v-if="content"
       class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:w-1/3 p-8 gap-8 rounded-lg shadow-lg border bg-gray-100 flex flex-col justify-between items-center"
     >
@@ -22,13 +22,13 @@
         <div class="flex flex-row justify-start items-center gap-4">
           <input
             type="checkbox"
-            name="terms"
-            id="terms"
+            :name="terms + index.toString()"
+            :id="terms + index.toString()"
             class="transform scale-150 cursor-pointer"
             required
           />
           <label
-            for="terms"
+            :for="terms + index.toString()"
             class="text-justify text-sm lg:text-xl text-gray-600 font-normal cursor-pointer"
             >{{ item.text_terms }}</label
           >

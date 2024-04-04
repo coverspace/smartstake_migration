@@ -1,6 +1,6 @@
 site_url: http://localhost:3000
-# site_url: https://github.com/r4nd3l/SmartStake_migration
-logo_url: https://raw.githubusercontent.com/r4nd3l/SmartStake_migration/feature/netlify/public/img/myLogo.png
+# site_url: https://github.com/coverspace/SmartStake_migration
+logo_url: https://raw.githubusercontent.com/coverspace/SmartStake_migration/feature/netlify/public/img/myLogo.png
 
 # The search functionally requires loading all collection(s) entries,
 search: true
@@ -9,7 +9,7 @@ publish_mode: editorial_workflow
 backend:
   name: github
   # name: test-repo # in development mode(!)
-  repo: r4nd3l/SmartStake_migration
+  repo: coverspace/SmartStake_migration
   branch: main
   squash_merges: true
 
