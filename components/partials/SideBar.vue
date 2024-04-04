@@ -21,7 +21,7 @@
       </div>
       <ul class="m-4">
         <li
-          v-for="(item, index) in navigationTree.slice(0, 4)"
+          v-for="(item, index) in navigationTree.slice(0, 3)"
           :key="index"
           class="flex flex-row justify-start items-center w-full px-4 py-2"
         >
@@ -34,7 +34,7 @@
         </li>
         <hr class="border-b border-blue-500 w-full" />
         <li
-          v-for="(item, index) in navigationTree.slice(4)"
+          v-for="(item, index) in navigationTree.slice(3)"
           :key="index"
           class="flex flex-row justify-start items-center w-full px-4 py-2"
         >

@@ -31,7 +31,7 @@
         </div>
         <ul class="flex flex-row justify-end items-center gap-14 shadow p-4">
           <li
-            v-for="(item, index) in navigationTree.slice(0, 4)"
+            v-for="(item, index) in navigationTree.slice(0, 3)"
             :key="index"
             class="text-lg text-white font-medium uppercase hover:text-smart_orange_01"
           >
@@ -41,7 +41,7 @@
           </li>
           <a href="https://bigiba.com/registration/1S41GS" target="_blank">
             <button
-              class="text-xl text-white font-light uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024] cursor-pointer"
+              class="text-xl text-white font-semibold uppercase rounded-3xl px-8 py-2 bg-gradient-to-r from-[#780072] to-[#e00019] border-2 border-[#d43024] cursor-pointer"
             >
               Join us
             </button>

@@ -62,4 +62,12 @@ body {
   .line-clamp-3 {
     -webkit-line-clamp: 3;
   }
+
+  .truncate-5 {
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    /* font-size: 1.125rem; */
+  }
 }
