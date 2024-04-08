@@ -33,7 +33,8 @@
     <div class="col-span-12 px-4 xl:mx-0 xl:col-span-6 w-full mt-4 xl:mt-0">
       <ContentDoc path="about/block_01" v-slot="{ doc }">
         <form
-          @submit.prevent="handleSubmit"
+          method="POST"
+          action="/.netlify/functions/sendMail"
           class="flex flex-col justify-start items-start gap-4 xl:gap-8 px-8 py-12 shadow-xl"
         >
           <h1 class="text-gray-600 font-bold text-xl">
@@ -88,33 +89,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      name: "",
-      email: "",
-      message: "",
-    };
-  },
-  methods: {
-    async handleSubmit() {
-      try {
-        await this.$axios.post("/.netlify/functions/sendEmail", {
-          name: this.name,
-          email: this.email,
-          message: this.message,
-        });
-        alert("Email sent successfully");
-        // Reset form fields
-        this.name = "";
-        this.email = "";
-        this.message = "";
-      } catch (error) {
-        alert("Failed to send email");
-      }
-    },
-  },
-};
-</script>
