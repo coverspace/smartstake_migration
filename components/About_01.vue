@@ -34,6 +34,7 @@
       <ContentDoc path="about/block_01" v-slot="{ doc }">
         <form
           method="POST"
+          @submit="handleSubmit"
           class="flex flex-col justify-start items-start gap-4 xl:gap-8 px-8 py-12 shadow-xl"
         >
           <h1 class="text-gray-600 font-bold text-xl">
@@ -88,3 +89,40 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const formData = ref({
+  name: "",
+  email: "",
+  comment: "",
+});
+
+async function handleSubmit(event) {
+  event.preventDefault(); // Prevent default form submission behavior
+
+  const { name, email, comment } = formData.value;
+
+  await fetch(`${process.env.URL}/.netlify/functions/emails/subscribed`, {
+    method: "POST",
+    headers: {
+      // 'Content-Type': 'application/json'
+      "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      comment,
+    }),
+  });
+
+  formData.value = {
+    name: "",
+    email: "",
+    comment: "",
+  };
+
+  alert("Your message has been sent successfully!");
+}
+</script>
