@@ -90,37 +90,5 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-let name = ref("");
-let email = ref("");
-let message = ref("");
-
-const handleSubmit = async () => {
-  if (!name.value || !email.value || !message.value) {
-    alert("Please fill in all fields.");
-    return;
-  }
-
-  try {
-    const fetch = await import("node-fetch");
-    await fetch.default("/.netlify/functions/emails/subscribed", {
-      method: "POST",
-      body: JSON.stringify({
-        subscriberName: name.value,
-        subscriberEmail: email.value,
-        inviteeEmail: "office@smartstake.ai",
-      }),
-    });
-
-    alert("Form submitted successfully!");
-    name.value = "";
-    email.value = "";
-    message.value = "";
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert(
-      "An error occurred while submitting the form. Please try again later!"
-    );
-  }
-};
+// hola
 </script>
