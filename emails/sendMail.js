@@ -3,15 +3,17 @@ const mailgun = require("mailgun-js");
 exports.handler = async (event) => {
   const { name, email, message } = JSON.parse(event.body);
 
+  // Initialize Mailgun client
   const mg = mailgun({
     apiKey: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMAIN,
+    domain: process.env.MAILGUN_API_DOMAIN,
+    // host: `api.${process.env.NETLIFY_EMAILS_MAILGUN_HOST_REGION}.mailgun.net`,
   });
 
   const data = {
     from: `${name} <${email}>`,
     to: "office@smartstake.ai",
-    subject: "New Contact Form Submission via Mailgun",
+    subject: "New contact form submission",
     text: message,
   };
 
