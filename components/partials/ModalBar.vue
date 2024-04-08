@@ -29,9 +29,10 @@
             class="flex flex-col justify-start items-start w-full"
           >
             <h1 class="text-2xl text-gray-600">{{ item.title }}</h1>
-            <p class="text-lg text-gray-500 text-justify my-2">
-              {{ item.description }}
-            </p>
+            <p
+              v-html="formatDescription(item.description)"
+              class="text-lg text-gray-500 text-justify my-2"
+            ></p>
             <NuxtImg
               v-if="item.image"
               :src="item.image"
@@ -68,14 +69,8 @@ const props = defineProps({
 
 const emit = defineEmits(["cancel"]);
 
-// watch(
-//   () => props.setModal,
-//   (newValue) => {
-//     if (newValue) {
-//       document.body.style.overflow = "hidden";
-//     } else {
-//       document.body.style.overflow = "auto";
-//     }
-//   }
-// );
+const formatDescription = (description) => {
+  const paragraphs = description.split("\n");
+  return paragraphs.map((p) => `<p>${p}</p>`).join("<br>");
+};
 </script>
