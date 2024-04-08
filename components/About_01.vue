@@ -47,7 +47,7 @@
             <input
               type="text"
               id="name"
-              v-model="name"
+              name="name"
               required
               minlength="3"
               class="border-b w-full focus:outline-none focus:border-gray-400 py-2 px-1 text-gray-500"
@@ -60,7 +60,7 @@
             <input
               type="email"
               id="email"
-              v-model="email"
+              name="email"
               required
               minlength="3"
               class="border-b w-full focus:outline-none focus:border-gray-400 py-2 px-1 text-gray-500"
@@ -72,7 +72,7 @@
             >
             <textarea
               id="comment"
-              v-model="comment"
+              name="comment"
               required
               minlength="3"
               class="border-b w-full focus:outline-none focus:border-gray-400 py-2 px-1 text-gray-500"
