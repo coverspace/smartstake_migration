@@ -22,6 +22,9 @@
               :value="doc"
               class="text-xl w-4/5 xl:w-2/3 text-center font-medium text-gray-600"
             />
+            <small class="mx-8 text-justify lg:mx-auto">{{
+              doc.comment
+            }}</small>
           </ContentDoc>
         </div>
       </div>

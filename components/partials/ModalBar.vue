@@ -33,6 +33,7 @@
               {{ item.description }}
             </p>
             <NuxtImg
+              v-if="item.image"
               :src="item.image"
               class="m-0 p-0 w-full h-full bg-center bg-no-repeat bg-cover bg-fixed rounded-md"
             />

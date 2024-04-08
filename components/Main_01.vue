@@ -25,7 +25,7 @@
               {{ doc.description }}
             </h1>
 
-            <div
+            <!-- <div
               class="flex flex-row justify-center items-center my-4 xl:my-12 w-full"
             >
               <div
@@ -41,7 +41,7 @@
                   >{{ item.label }}</small
                 >
               </div>
-            </div>
+            </div> -->
           </ContentDoc>
         </div>
       </div>

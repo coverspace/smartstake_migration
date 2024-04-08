@@ -14,6 +14,7 @@
               class="flex flex-col justify-center items-center h-full w-full"
             >
               <NuxtImg
+                v-if="set.image"
                 :src="set.image"
                 class="m-0 p-0 w-full h-full bg-center bg-no-repeat bg-cover bg-fixed rounded-t-lg xl:rounded-l-lg xl:rounded-t-none"
               />
@@ -29,12 +30,21 @@
                 <p class="text-gray-500 text-lg text-justify truncate-5">
                   {{ set.text }}
                 </p>
-                <button
-                  @click="openModal(index)"
-                  class="text-base ml-auto mr-0 mt-4 text-white font-semibold uppercase rounded-md px-4 py-1 bg-blue-900 cursor-pointer"
+                <div
+                  class="flex flex-col xl:flex-row justify-start items-center w-full"
                 >
-                  {{ set.text_button }}
-                </button>
+                  <small
+                    class="text-xs text-gry-500 font-semibold uppercase cursor-pointer my-4 xl:my-0"
+                  >
+                    {{ set.hint }}
+                  </small>
+                  <button
+                    @click="openModal(index)"
+                    class="text-base ml-auto mr-0 text-white font-semibold uppercase rounded-md px-4 py-1 bg-blue-900 cursor-pointer"
+                  >
+                    {{ set.text_button }}
+                  </button>
+                </div>
               </div>
 
               <hr class="border-b border-gray-200 my-8 w-full" />

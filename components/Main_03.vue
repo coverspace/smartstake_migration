@@ -6,11 +6,11 @@
           class="flex flex-col justify-center items-center gap-4 xl:gap-10 my-8 xl:my-16 h-full"
         >
           <ContentDoc path="main/block_03" v-slot="{ doc }">
-            <h1
+            <!-- <h1
               class="text-lg xl:text-2xl text-center font-medium text-gray-600 uppercase"
             >
               {{ doc.description }}
-            </h1>
+            </h1> -->
 
             <h1
               class="text-2xl xl:text-7xl text-center font-bold bg-gradient-to-r from-[#780072] to-[#e00019] inline-block text-transparent bg-clip-text uppercase"
