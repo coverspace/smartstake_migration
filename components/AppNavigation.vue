@@ -71,7 +71,7 @@ const openMenu = () => {
 };
 
 onMounted(() => {
-  console.log("navigationTree", props.navigationTree);
+  // console.log("navigationTree", props.navigationTree);
   // console.log("title", props.navigationTree[0].children[0].title);
 });
 </script>

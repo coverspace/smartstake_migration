@@ -34,7 +34,6 @@
       <ContentDoc path="about/block_01" v-slot="{ doc }">
         <form
           method="POST"
-          data-netlify="true"
           action="/.netlify/functions/sendMail"
           class="flex flex-col justify-start items-start gap-4 xl:gap-8 px-8 py-12 shadow-xl"
         >
