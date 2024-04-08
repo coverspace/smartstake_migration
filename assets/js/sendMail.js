@@ -6,8 +6,8 @@ export async function handler(event) {
 
   // Initialize Mailgun client
   const mg = mailgun({
-    apiKey: process.env.NETLIFY_EMAILS_PROVIDER_API_KEY,
-    domain: process.env.NETLIFY_EMAILS_MAILGUN_DOMAIN,
+    apiKey: process.env.MAILGUN_API_KEY,
+    domain: process.env.MAILGUN_API_DOMAIN,
     // host: `api.${process.env.NETLIFY_EMAILS_MAILGUN_HOST_REGION}.mailgun.net`,
   });
 
