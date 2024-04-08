@@ -33,8 +33,7 @@
     <div class="col-span-12 px-4 xl:mx-0 xl:col-span-6 w-full mt-4 xl:mt-0">
       <ContentDoc path="about/block_01" v-slot="{ doc }">
         <form
-          method="POST"
-          action="/.netlify/functions/emails/sendMail"
+          @submit.prevent="handleSubmit"
           class="flex flex-col justify-start items-start gap-4 xl:gap-8 px-8 py-12 shadow-xl"
         >
           <h1 class="text-gray-600 font-bold text-xl">
@@ -47,7 +46,7 @@
             <input
               type="text"
               id="name"
-              name="name"
+              v-model="name"
               required
               minlength="3"
               class="border-b w-full focus:outline-none focus:border-gray-400 py-2 px-1 text-gray-500"
@@ -60,7 +59,7 @@
             <input
               type="email"
               id="email"
-              name="email"
+              v-model="email"
               required
               minlength="3"
               class="border-b w-full focus:outline-none focus:border-gray-400 py-2 px-1 text-gray-500"
@@ -72,7 +71,7 @@
             >
             <textarea
               id="comment"
-              name="comment"
+              v-model="message"
               required
               minlength="3"
               class="border-b w-full focus:outline-none focus:border-gray-400 py-2 px-1 text-gray-500"
@@ -89,3 +88,39 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+let name = ref("");
+let email = ref("");
+let message = ref("");
+
+const handleSubmit = async () => {
+  if (!name.value || !email.value || !message.value) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  try {
+    const fetch = await import("node-fetch");
+    await fetch.default("/.netlify/functions/emails/subscribed", {
+      method: "POST",
+      body: JSON.stringify({
+        subscriberName: name.value,
+        subscriberEmail: email.value,
+        inviteeEmail: "office@smartstake.ai",
+      }),
+    });
+
+    alert("Form submitted successfully!");
+    name.value = "";
+    email.value = "";
+    message.value = "";
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert(
+      "An error occurred while submitting the form. Please try again later."
+    );
+  }
+};
+</script>
