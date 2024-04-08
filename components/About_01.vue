@@ -119,7 +119,7 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error("Error submitting form:", error);
     alert(
-      "An error occurred while submitting the form. Please try again later."
+      "An error occurred while submitting the form. Please try again later!"
     );
   }
 };
