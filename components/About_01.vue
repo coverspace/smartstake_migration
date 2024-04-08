@@ -80,6 +80,7 @@
             ></textarea>
           </div>
           <button
+            type="submit"
             class="text-xs xl:text-lg mx-auto xl:mx-0 text-white font-semibold uppercase rounded-3xl px-8 py-2 shadow-xl bg-smart_indigo_01 hover:bg-smart_orange_01 border-2 border-[#d43024] cursor-pointer"
           >
             {{ doc.form_button }}
