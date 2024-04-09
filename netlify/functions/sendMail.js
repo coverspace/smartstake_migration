@@ -7,12 +7,20 @@ const mg = mailgun.client({
   key: process.env.NETLIFY_EMAILS_PROVIDER_API_KEY,
 });
 
+const queryString = require("querystring");
+
 exports.handler = async (event) => {
   try {
-    // Parse form input
-    const { name, email, message } = JSON.parse(event.body);
+    const formData = queryString.parse(event.body);
 
-    // Send email using Mailgun
+    const name = formData.name;
+    const email = formData.email;
+    const message = formData.comment;
+
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+
     const emailData = {
       from: `${name} <${email}>`,
       to: "office@smartstake.ai",
@@ -25,13 +33,13 @@ exports.handler = async (event) => {
       emailData
     );
 
-    // Return success response
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Email sent successfully" }),
     };
   } catch (error) {
-    // Return error response
+    console.error("Error:", error);
+
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Failed to send email" }),
