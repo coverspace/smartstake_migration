@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-12 lg:container mx-auto">
-    <div class="col-span-12">
+    <div class="col-span-12 h-[80dvh]">
       <div
         v-for="item in content"
         v-if="content"
