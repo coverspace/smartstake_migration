@@ -8,7 +8,6 @@ const mg = mailgun.client({
 });
 
 const queryString = require("querystring");
-
 exports.handler = async (event) => {
   try {
     const formData = queryString.parse(event.body);
@@ -16,10 +15,6 @@ exports.handler = async (event) => {
     const name = formData.name;
     const email = formData.email;
     const message = formData.comment;
-
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
 
     const emailData = {
       from: `${name} <${email}>`,
@@ -34,8 +29,11 @@ exports.handler = async (event) => {
     );
 
     return {
-      statusCode: 200,
-      body: JSON.stringify({ message: "Email sent successfully" }),
+      statusCode: 302,
+      headers: {
+        Location: "/success",
+      },
+      body: "", // Empty body is required for a response
     };
   } catch (error) {
     console.error("Error:", error);
