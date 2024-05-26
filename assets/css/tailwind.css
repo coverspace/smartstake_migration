@@ -23,6 +23,7 @@ html::before {
   background: transparent;
   z-index: 9998;
   pointer-events: auto;
+  user-select: none;
   cursor: not-allowed;
 }
 html {
@@ -43,6 +44,7 @@ html::after {
   background: white;
   z-index: 9999;
   pointer-events: auto;
+  user-select: none;
   cursor: not-allowed;
 }
 
